@@ -31,14 +31,17 @@ function calculateBtnClicked () {
 }
 
 function color() {
+  //if less than 20 remove both classList
   if (roundedBillTotal < 20) {
       billTotalElement.classList.remove("warning");
       billTotalElement.classList.remove("danger");
   }
+  //if greater than 20 remove "danger" add "warning"
    if (roundedBillTotal > 20 && 30 > roundedBillTotal ) {
         billTotalElement.classList.remove("danger");
         billTotalElement.classList.add("warning");
   }
+  //if greater than 30 remove "warning" add "danger"
   if (roundedBillTotal > 30 ) {
     billTotalElement.classList.remove("warning");
     billTotalElement.classList.add("danger");
