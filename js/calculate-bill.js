@@ -1,17 +1,17 @@
-var roundedBillTotal = 0;
-//get a reference to the calculate button
+//get a reference to the calculate butto
 var calculateBtnElement = document.querySelector(".calculateBtn");
 //get a reference to the billTotal element
 var billTotalElement = document.querySelector(".billTotal");
 //get a reference to the billString
 var billStringElement = document.querySelector(".billString");
 //create the function that will be called when the calculate button is pressed
+var roundedBillTotal = 0;
 function calculateBtnClicked () {
   //  * this function should read the string value entered - split it on a comma.
   var billStringFunction = billStringElement.value;
-  //console.log(billStringFunction);
+  //split the impute value
   var billItems = billStringFunction.split(",");
-//  console.log(billItems);
+
   var billTotal = 0;
   //  * loop over all the entries in the the resulting list
   for (var i=0; i<billItems.length;i++) {
