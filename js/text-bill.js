@@ -11,6 +11,7 @@ var totalBill = 0;
 function calculateText() {
   //input value
   var text = billType.value;
+  //console.log(text);
   if (text === "sms") {
     smsTotal += 0.75;
   }
@@ -41,7 +42,7 @@ function totalCostColor () {
     sum.classList.add("danger");
   }
 }
-// add Event Listener [call my functions]
+// add Event Listener [call my function]
 addBillButton.addEventListener("click",
 function () {
   calculateText();
