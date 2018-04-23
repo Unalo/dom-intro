@@ -67,7 +67,21 @@ function update() {
 // console.log(callText);
   //console.log(smsText);
 }
-
+//screen to change behaviour when "warning" and "danger" are reached
+function screenBehaviour() {
+  if (billSum < warningBlock) { //remove both classes
+    totalSum.classList.remove("warning");
+    totalSum.classList.remove("danger");
+  }
+  if (billSum > warningBlock && criticalBlock > billSum) {
+    totalSum.classList.add("warning");
+    totalSum.classList.remove("danger");
+  }
+  if (billSum >= criticalBlock) {
+    totalSum.classList.add("danger");
+    totalSum.classList.remove("warning");
+  }
+}
 //add an event listener for when the 'Update settings' button is pressed
 updateBtn.addEventListener("click", function() {
   update();
@@ -75,10 +89,5 @@ updateBtn.addEventListener("click", function() {
 //add an event listener for when the add button is pressed
 addBtn.addEventListener("click", function(){
   billWithSettings();
-})
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the call / sms total
-// * add the appropriate value to the overall total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen.
-// * check the value thresholds and display the total value in the right color.
+  screenBehaviour();
+});
