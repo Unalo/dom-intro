@@ -34,5 +34,13 @@ describe('The Text Bill function', function() {
     assert.equal(text.sms(), 3.00);
     assert.equal(text.call(), 0.00);
   });
-  it('')
+  it('It should check if someone added nothing', function() {
+    var text = TextBill();
+
+    text.Maths('');
+
+    assert.equal(text.sum(), 0.00);
+    assert.equal(text.sms(), 0.00);
+    assert.equal(text.call(), 0.00);
+  });
 });

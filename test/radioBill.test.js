@@ -1,5 +1,5 @@
 describe('The Radio Bill function', function() {
-  it('Calculate total from a selected Radio button', function() {
+  it('Calculate sum from a selected Radio button', function() {
     var radio = TextBill();
     radio.Maths('call');
     radio.Maths('call');
@@ -29,5 +29,12 @@ describe('The Radio Bill function', function() {
     assert.equal(radio.sum(), 5.50);
     assert.equal(radio.sms(), 0.00);
     assert.equal(radio.call(), 5.50);
+  });
+  it('Return nothing if nothing was selected', function() {
+    var radio = TextBill();
+    radio.Maths('');
+    assert.equal(radio.sum(), 0.00);
+    assert.equal(radio.sms(), 0.00);
+    assert.equal(radio.call(), 0.00);
   });
 });

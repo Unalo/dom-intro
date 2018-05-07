@@ -55,14 +55,14 @@ addBtn.addEventListener('click', function() {
       totalSum.classList.remove("warning");
       totalSum.classList.remove("danger");
     }
-    // if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
-    //   totalSum.classList.add("warning");
-    //   totalSum.classList.remove("danger");
-    // }
-    // if (sumTotals1 >= criticalBlock) {
-    //   totalSum.classList.add("danger");
-    //   totalSum.classList.remove("warning");
-    // }
+    if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
+      totalSum.classList.add("warning");
+      totalSum.classList.remove("danger");
+    }
+    if (sumTotals1 >= criticalBlock) {
+      totalSum.classList.add("danger");
+      totalSum.classList.remove("warning");
+    }
   }
 });
 
