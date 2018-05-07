@@ -1,56 +1,39 @@
-// get a reference to the sms or call radio buttons
-
-// var billType = document.querySelector(".billItemTypeRadio");
-
 var addBtn = document.querySelector(".radioBillAddBtn");
 var totalCallTwo = document.querySelector(".callTotalTwo");
 var totalSmsTwo = document.querySelector(".smsTotalTwo");
 var sumTwo = document.querySelector(".totalTwo");
-//create a variable that will keep track of the total bill
-var callTotalTwo = 0;
-var smsTotalTwo = 0;
-var totalBillTwo = 0;
+var first = TextBill(); // factory function
 
-function radioBill () {
+function radioBill() {
+  //input value
   var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-  if (checkedRadioBtn){
+  if (checkedRadioBtn) {
     var billItemType = checkedRadioBtn.value;
   }
-  if (billItemType === "call") {
-    callTotalTwo += 2.75;
-  }else if (billItemType === "sms"){
-    smsTotalTwo += 0.75;
-  }
-  totalCallTwo.innerHTML = callTotalTwo.toFixed(2);
-  totalSmsTwo.innerHTML = smsTotalTwo.toFixed(2);
-  totalBillTwo = callTotalTwo + smsTotalTwo;
-  sumTwo.innerHTML = totalBillTwo.toFixed(2);
+  first.Maths(billItemType); // update calls and sms
+  totalCallTwo.innerHTML = first.call().toFixed(2);
+  totalSmsTwo.innerHTML = first.sms().toFixed(2);
+  sumTwo.innerHTML = first.sum().toFixed(2);
 }
-function totalColor () {
-  if (totalBillTwo < 30 ) {
+
+function totalColor() {
+  var sumTotal = first.sum();
+  if (sumTotal < 30) {
     sumTwo.classList.remove("danger");
     sumTwo.classList.remove("warning");
   }
-  if (totalBillTwo > 30 && 50 > totalBillTwo ) {
+  if (sumTotal > 30 && 50 > sumTotal) {
     sumTwo.classList.remove("danger");
     sumTwo.classList.add("warning");
-  }
-  else if (totalBillTwo > 50) {
+  } else if (sumTotal > 50) {
     sumTwo.classList.remove("warning");
     sumTwo.classList.add("danger");
   }
 }
 // add Event Listener [call my function]
 addBtn.addEventListener("click",
-function () {
-  radioBill();
-  totalColor();
-}
+  function() {
+    radioBill();
+    totalColor();
+  }
 );
-
-//add an event listener for when the add button is pressed
-
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
