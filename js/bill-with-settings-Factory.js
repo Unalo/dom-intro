@@ -12,20 +12,20 @@ function BillSettings() {
     if (billItemTypeWithSettings === "call") {
       callSum += callCostBlock;
       billSum += callCostBlock;
-      // if (billSum > criticalBlock) {
-      //   var remainder = billSum - criticalBlock;
-      //   billSum -= remainder;
-      //   callSum -= remainder;
-      // }
+      if (billSum > criticalBlock) {
+        var remainder = billSum - criticalBlock;
+        billSum -= remainder;
+        callSum -= remainder;
+      }
     }
     if (billItemTypeWithSettings === "sms") {
       smsSum += smsCostBlock;
       billSum += smsCostBlock;
-      // if (billSum > criticalBlock) {
-      //   var remainder = billSum - criticalBlock;
-      //   billSum -= remainder;
-      //   smsSum -= remainder;
-      // }
+      if (billSum > criticalBlock) {
+        var remainder = billSum - criticalBlock;
+        billSum -= remainder;
+        smsSum -= remainder;
+      }
     }
   }
 
@@ -67,21 +67,32 @@ function BillSettings() {
   }
 
   function screenBehaviour() {
-    var sumTotals1 = settingsBillFunc.sumOne();
-    console.log(sumTotals1);
-    if (sumTotals1 < warningBlock) { //remove both classes
+    // var sumTotals1 = settingsBillFunc.sumOne();
+    //console.log(sumTotals1);
+    if (billSum < warningBlock) { //remove both classes
       totalSum.classList.remove("warning");
       totalSum.classList.remove("danger");
     }
-    if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
+    if (billSum > warningBlock && criticalBlock > billSum) {
       totalSum.classList.add("warning");
       totalSum.classList.remove("danger");
     }
-    if (sumTotals1 >= criticalBlock) {
+    if (billSum >= criticalBlock) {
       totalSum.classList.add("danger");
       totalSum.classList.remove("warning");
     }
   }
+  // function stop() {
+  //   if (billSum > criticalBlock) {
+  //     var remainder = billSum - criticalBlock;
+  //     billSum -= remainder;
+  //     callSum -= remainder;
+  //   } else if (billSum > criticalBlock) {
+  //     var remainder = billSum - criticalBlock;
+  //     billSum -= remainder;
+  //     smsSum -= remainder;
+  //   }
+  // }
   return {
     calc,
     smsOne,
@@ -90,7 +101,7 @@ function BillSettings() {
     criticalOne,
     callSumOne,
     smsSumOne,
-    sumOne,
-    screenBehaviour
+    screenBehaviour,
+    sumOne
   }
 }

@@ -48,6 +48,7 @@ addBtn.addEventListener('click', function() {
   smsTotalSum.innerHTML = settingsBillFunc.smsSumOne().toFixed(2);
   totalSum.innerHTML = settingsBillFunc.sumOne().toFixed(2);
   var unalo = settingsBillFunc.screenBehaviour();
+  // var siya = settingsBillFunc.stop();
 
   //screen to change behaviour when "warning" and "danger" are reached
   //   function screenBehaviour() {
@@ -73,22 +74,23 @@ addBtn.addEventListener('click', function() {
 //   // if (billItemTypeWithSettings === "call") {
 //   //   callSum += callCostBlock;
 //   //   billSum += callCostBlock;
-//   if (billSum > criticalBlock) {
-//     var remainder = billSum - criticalBlock;
-//     billSum -= remainder;
-//     callSum -= remainder;
-//   }
+// if (billSum > criticalBlock) {
+//   var remainder = billSum - criticalBlock;
+//   billSum -= remainder;
+//   callSum -= remainder;
+// }
+// if (billSum > criticalBlock) {
+//   var remainder = billSum - criticalBlock;
+//   billSum -= remainder;
+//   smsSum -= remainder;
+// }
 //
 // }
 // //update sms
 // if (billItemTypeWithSettings === "sms") {
 //   smsSum += smsCostBlock;
 //   billSum += smsCostBlock;
-//   if (billSum > criticalBlock) {
-//     var remainder = billSum - criticalBlock;
-//     billSum -= remainder;
-//     smsSum -= remainder;
-//   }
+
 //
 // }
 // }
