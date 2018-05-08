@@ -65,6 +65,23 @@ function BillSettings() {
     billSum = callSum + smsSum
     return billSum;
   }
+
+  function screenBehaviour() {
+    var sumTotals1 = settingsBillFunc.sumOne();
+    console.log(sumTotals1);
+    if (sumTotals1 < warningBlock) { //remove both classes
+      totalSum.classList.remove("warning");
+      totalSum.classList.remove("danger");
+    }
+    if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
+      totalSum.classList.add("warning");
+      totalSum.classList.remove("danger");
+    }
+    if (sumTotals1 >= criticalBlock) {
+      totalSum.classList.add("danger");
+      totalSum.classList.remove("warning");
+    }
+  }
   return {
     calc,
     smsOne,
@@ -73,6 +90,7 @@ function BillSettings() {
     criticalOne,
     callSumOne,
     smsSumOne,
-    sumOne
+    sumOne,
+    screenBehaviour
   }
 }

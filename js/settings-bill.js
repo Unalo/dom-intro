@@ -24,48 +24,49 @@ var updateBtn = document.querySelector(".updateSettings");
 // var billSum = 0;
 
 
-var settingsBillObj = BillSettings();
+var settingsBillFunc = BillSettings();
 
 
 updateBtn.addEventListener('click', function() {
   var callText = callSetting.value;
-  settingsBillObj.callOne(callText)
+  settingsBillFunc.callOne(callText)
   var smsText = smsSetting.value;
-  settingsBillObj.smsOne(smsText)
+  settingsBillFunc.smsOne(smsText)
   var warningColor = warningSetting.value;
-  settingsBillObj.warningOne(warningColor)
+  settingsBillFunc.warningOne(warningColor)
   var criticalColor = criticalSetting.value;
-  settingsBillObj.criticalOne(criticalColor)
+  settingsBillFunc.criticalOne(criticalColor)
 });
 
 addBtn.addEventListener('click', function() {
   var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
   if (checkedBtn) {
     var billItemTypeWithSettings = checkedBtn.value;
-    settingsBillObj.calc(billItemTypeWithSettings);
+    settingsBillFunc.calc(billItemTypeWithSettings);
   }
-  callTotalSum.innerHTML = settingsBillObj.callSumOne().toFixed(2);
-  smsTotalSum.innerHTML = settingsBillObj.smsSumOne().toFixed(2);
-  totalSum.innerHTML = settingsBillObj.sumOne().toFixed(2);
-  //screen to change behaviour when "warning" and "danger" are reached
-  function screenBehaviour() {
-    var sumTotals1 = settingsBillObj.sumOne();
-    console.log(sumTotals1);
-    if (sumTotals1 < warningBlock) { //remove both classes
-      totalSum.classList.remove("warning");
-      totalSum.classList.remove("danger");
-    }
-    if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
-      totalSum.classList.add("warning");
-      totalSum.classList.remove("danger");
-    }
-    if (sumTotals1 >= criticalBlock) {
-      totalSum.classList.add("danger");
-      totalSum.classList.remove("warning");
-    }
-  }
-});
+  callTotalSum.innerHTML = settingsBillFunc.callSumOne().toFixed(2);
+  smsTotalSum.innerHTML = settingsBillFunc.smsSumOne().toFixed(2);
+  totalSum.innerHTML = settingsBillFunc.sumOne().toFixed(2);
+  var unalo = settingsBillFunc.screenBehaviour();
 
+  //screen to change behaviour when "warning" and "danger" are reached
+  //   function screenBehaviour() {
+  //     var sumTotals1 = settingsBillFunc.sumOne();
+  //     console.log(sumTotals1);
+  //     if (sumTotals1 < warningBlock) { //remove both classes
+  //       totalSum.classList.remove("warning");
+  //       totalSum.classList.remove("danger");
+  //     }
+  //     if (sumTotals1 > warningBlock && criticalBlock > sumTotals1) {
+  //       totalSum.classList.add("warning");
+  //       totalSum.classList.remove("danger");
+  //     }
+  //     if (sumTotals1 >= criticalBlock) {
+  //       totalSum.classList.add("danger");
+  //       totalSum.classList.remove("warning");
+  //     }
+  //   }
+});
 // function billWithSettings() {
 //
 //   // update call
