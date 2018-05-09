@@ -45,13 +45,11 @@ describe('The Bill with Settings function', function() {
     settings.calc('call');
     settings.calc('call');
     settings.calc('sms');
-    settings.calc('call');
-    settings.calc('sms');
     settings.calc('sms');
 
-    assert.equal(settings.callSumOne(), 12.00);
-    assert.equal(settings.smsSumOne(), 6.00);
-    assert.equal(settings.sumOne(), 19.50);
+    assert.equal(settings.callSumOne(), 8.00);
+    assert.equal(settings.smsSumOne(), 4.00);
+    assert.equal(settings.sumOne(), 12.00);
 
   });
 
@@ -69,5 +67,33 @@ describe('The Bill with Settings function', function() {
     assert.equal(settings.smsSumOne(), 0.00);
     assert.equal(settings.sumOne(), 0.00);
 
+  });
+  it('It should check if warning level is reached', function() {
+    var settings = BillSettings();
+    settings.callOne(3.50);
+    settings.smsOne(1.50);
+    settings.warningOne(10.00);
+    settings.criticalOne(20.00);
+
+    settings.calc('call');
+    settings.calc('sms');
+    settings.calc('call')
+
+    assert.equal(settings.sumOne(), 8.50 );
+
+  });
+  it('It should check if critical level is reached', function(){
+    var settings = BillSettings();
+    settings.callOne(2.80);
+    settings.smsOne(2.50);
+    settings.warningOne(12.90);
+    settings.criticalOne(14.50);
+
+    settings.calc('sms');
+    settings.calc('sms');
+    settings.calc('call');
+    settings.calc('sms')
+
+    assert.equal(settings.sumOne(), 10.30  );
   });
 });

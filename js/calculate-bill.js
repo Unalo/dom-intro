@@ -7,8 +7,7 @@ var billTotalElement = document.querySelector(".billTotal");
 var billStringElement = document.querySelector(".billString");
 //create the function that will be called when the calculate button is pressed
 function calculateBtnClicked(billStringFunction) {
-  //  * this function should read the string value entered - split it on a comma.
-  // var billStringFunction = billStringElement.value;
+
   //split the impu
   var billItems = billStringFunction.split(",");
   //  console.log(billItems);
@@ -28,26 +27,7 @@ function calculateBtnClicked(billStringFunction) {
   return billTotal.toFixed(2);
   // billTotalElement.innerHTML = roundedBillTotal;
 }
-//var roundedBillTotal = calculateBtnClicked(billStringFunction)
 
-// function color() {
-//
-//   //if less than 20 remove both classList
-//   if (roundedBillTotal < 20) {
-//     billTotalElement.classList.remove("warning");
-//     billTotalElement.classList.remove("danger");
-//   }
-//   //if greater than 20 remove "danger" add "warning"
-//   if (roundedBillTotal > 20 && 30 > roundedBillTotal) {
-//     billTotalElement.classList.remove("danger");
-//     billTotalElement.classList.add("warning");
-//   }
-//   //if greater than 30 remove "warning" add "danger"
-//   if (roundedBillTotal > 30) {
-//     billTotalElement.classList.remove("warning");
-//     billTotalElement.classList.add("danger");
-//   }
-// }
 calculateBtnElement.addEventListener('click',
   function() {
     var billStringFunction = billStringElement.value;

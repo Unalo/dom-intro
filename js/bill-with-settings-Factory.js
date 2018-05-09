@@ -82,17 +82,6 @@ function BillSettings() {
       totalSum.classList.remove("warning");
     }
   }
-  // function stop() {
-  //   if (billSum > criticalBlock) {
-  //     var remainder = billSum - criticalBlock;
-  //     billSum -= remainder;
-  //     callSum -= remainder;
-  //   } else if (billSum > criticalBlock) {
-  //     var remainder = billSum - criticalBlock;
-  //     billSum -= remainder;
-  //     smsSum -= remainder;
-  //   }
-  // }
   return {
     calc,
     smsOne,

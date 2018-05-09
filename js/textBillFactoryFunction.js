@@ -29,7 +29,6 @@ function TextBill() {
     Maths,
     call,
     sms,
-    sum,
+    sum
   }
-
 }
