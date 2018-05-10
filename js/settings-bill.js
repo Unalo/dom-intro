@@ -36,6 +36,6 @@ addBtn.addEventListener('click', function() {
   callTotalSum.innerHTML = settingsBillFunc.callSumOne().toFixed(2);
   smsTotalSum.innerHTML = settingsBillFunc.smsSumOne().toFixed(2);
   totalSum.innerHTML = settingsBillFunc.sumOne().toFixed(2);
-  var unalo = settingsBillFunc.screenBehaviour();
+  settingsBillFunc.screenBehaviour();
   // var siya = settingsBillFunc.stop(
 });

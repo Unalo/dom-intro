@@ -44,12 +44,20 @@ function BillSettings() {
   function warningOne(warningColor) {
     // var warningColor = warningSetting;
     warningBlock = parseFloat(warningColor);
+  }
+
+  function getWarning() {
     return warningBlock;
+
   }
 
   function criticalOne(criticalColor) {
     // var criticalColor = criticalSetting;
     criticalBlock = parseFloat(criticalColor);
+
+  }
+
+  function getCritical() {
     return criticalBlock;
   }
 
@@ -67,8 +75,6 @@ function BillSettings() {
   }
 
   function screenBehaviour() {
-    // var sumTotals1 = settingsBillFunc.sumOne();
-    //console.log(sumTotals1);
     if (billSum < warningBlock) { //remove both classes
       totalSum.classList.remove("warning");
       totalSum.classList.remove("danger");
@@ -88,6 +94,8 @@ function BillSettings() {
     callOne,
     warningOne,
     criticalOne,
+    getCritical,
+    getWarning,
     callSumOne,
     smsSumOne,
     screenBehaviour,

@@ -79,10 +79,10 @@ describe('The Bill with Settings function', function() {
     settings.calc('sms');
     settings.calc('call')
 
-    assert.equal(settings.sumOne(), 8.50 );
+    assert.isAtMost(settings.sumOne(), settings.getWarning());
 
   });
-  it('It should check if critical level is reached', function(){
+  it('It should check if critical level is reached', function() {
     var settings = BillSettings();
     settings.callOne(2.80);
     settings.smsOne(2.50);
@@ -94,6 +94,6 @@ describe('The Bill with Settings function', function() {
     settings.calc('call');
     settings.calc('sms')
 
-    assert.equal(settings.sumOne(), 10.30  );
+    assert.isAtMost(settings.sumOne(), settings.getCritical(), 'sum is less than critical');
   });
 });
