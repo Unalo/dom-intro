@@ -30,19 +30,16 @@ function BillSettings() {
   }
 
   function smsOne(smsText) {
-    // var smsText = smsSetting;
     smsCostBlock = parseFloat(smsText);
     return smsCostBlock;
   }
 
   function callOne(callText) {
-    // var callText = callSetting;
     callCostBlock = parseFloat(callText);
     return callCostBlock;
   }
 
   function warningOne(warningColor) {
-    // var warningColor = warningSetting;
     warningBlock = parseFloat(warningColor);
   }
 
@@ -52,9 +49,7 @@ function BillSettings() {
   }
 
   function criticalOne(criticalColor) {
-    // var criticalColor = criticalSetting;
     criticalBlock = parseFloat(criticalColor);
-
   }
 
   function getCritical() {
