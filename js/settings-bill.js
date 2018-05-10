@@ -15,20 +15,20 @@ var addBtn = document.querySelector(".addbutton");
 var updateBtn = document.querySelector(".updateSettings");
 var settingsBillFunc = BillSettings();
 
-
+// update button
 updateBtn.addEventListener('click', function() {
-  var callText = callSetting.value;
+  var callText = callSetting.value; // update call settings field
   settingsBillFunc.CallOne(callText)
-  var smsText = smsSetting.value;
+  var smsText = smsSetting.value; // update sms settings field
   settingsBillFunc.SmsOne(smsText)
-  var warningColor = warningSetting.value;
+  var warningColor = warningSetting.value; // update warning settings field
   settingsBillFunc.WarningOne(warningColor)
-  var criticalColor = criticalSetting.value;
+  var criticalColor = criticalSetting.value; // update critical settings field
   settingsBillFunc.CriticalOne(criticalColor)
 });
-
+// add button
 addBtn.addEventListener('click', function() {
-  var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+  var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked"); // inpute value [call, sms]
   if (checkedBtn) {
     var billItemTypeWithSettings = checkedBtn.value;
     settingsBillFunc.Calc(billItemTypeWithSettings);
@@ -36,6 +36,5 @@ addBtn.addEventListener('click', function() {
   callTotalSum.innerHTML = settingsBillFunc.CallSumOne().toFixed(2);
   smsTotalSum.innerHTML = settingsBillFunc.SmsSumOne().toFixed(2);
   totalSum.innerHTML = settingsBillFunc.SumOne().toFixed(2);
-  settingsBillFunc.ScreenBehaviour();
-  // var siya = settingsBillFunc.stop(
+  settingsBillFunc.ScreenBehaviour(); // call back function for screen changes
 });

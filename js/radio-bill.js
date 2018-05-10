@@ -2,7 +2,7 @@ var addBtn = document.querySelector(".radioBillAddBtn");
 var totalCallTwo = document.querySelector(".callTotalTwo");
 var totalSmsTwo = document.querySelector(".smsTotalTwo");
 var sumTwo = document.querySelector(".totalTwo");
-var first = TextBill(); // factory function
+var first = TextBill(); // factory function [instance]
 
 function radioBill() {
   //input value
@@ -15,7 +15,7 @@ function radioBill() {
   totalSmsTwo.innerHTML = first.Sms().toFixed(2);
   sumTwo.innerHTML = first.Sum().toFixed(2);
 }
-
+// screen changes
 function totalColor() {
   var sumTotal = first.Sum();
   if (sumTotal < 30) {

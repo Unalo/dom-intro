@@ -4,7 +4,7 @@ var totalCall = document.querySelector(".callTotalOne");
 var totalSms = document.querySelector(".smsTotalOne");
 var sum1 = document.querySelector(".totalOne");
 
-var main = TextBill(); //factory function
+var main = TextBill(); //factory function [instance]
 
 function calculateText() {
   //input value

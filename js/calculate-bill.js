@@ -25,7 +25,6 @@ function calculateBtnClicked(billStringFunction) {
   }
   //  * once done looping over all the entries - display the total onto the screen in the billTotal element
   return billTotal.toFixed(2);
-  // billTotalElement.innerHTML = roundedBillTotal;
 }
 
 calculateBtnElement.addEventListener('click',
