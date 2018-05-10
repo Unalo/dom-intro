@@ -8,7 +8,7 @@ function BillSettings() {
   var smsSum = 0;
   var billSum = 0;
 
-  function calc(billItemTypeWithSettings) {
+  function Calc(billItemTypeWithSettings) {
     if (billItemTypeWithSettings === "call") {
       callSum += callCostBlock;
       billSum += callCostBlock;
@@ -29,47 +29,47 @@ function BillSettings() {
     }
   }
 
-  function smsOne(smsText) {
+  function SmsOne(smsText) {
     smsCostBlock = parseFloat(smsText);
     return smsCostBlock;
   }
 
-  function callOne(callText) {
+  function CallOne(callText) {
     callCostBlock = parseFloat(callText);
     return callCostBlock;
   }
 
-  function warningOne(warningColor) {
+  function WarningOne(warningColor) {
     warningBlock = parseFloat(warningColor);
   }
 
-  function getWarning() {
+  function GetWarning() {
     return warningBlock;
 
   }
 
-  function criticalOne(criticalColor) {
+  function CriticalOne(criticalColor) {
     criticalBlock = parseFloat(criticalColor);
   }
 
-  function getCritical() {
+  function GetCritical() {
     return criticalBlock;
   }
 
-  function callSumOne() {
+  function CallSumOne() {
     return callSum;
   }
 
-  function smsSumOne() {
+  function SmsSumOne() {
     return smsSum;
   }
 
-  function sumOne() {
+  function SumOne() {
     billSum = callSum + smsSum
     return billSum;
   }
 
-  function screenBehaviour() {
+  function ScreenBehaviour() {
     if (billSum < warningBlock) { //remove both classes
       totalSum.classList.remove("warning");
       totalSum.classList.remove("danger");
@@ -84,16 +84,16 @@ function BillSettings() {
     }
   }
   return {
-    calc,
-    smsOne,
-    callOne,
-    warningOne,
-    criticalOne,
-    getCritical,
-    getWarning,
-    callSumOne,
-    smsSumOne,
-    screenBehaviour,
-    sumOne
+    Calc,
+    SmsOne,
+    CallOne,
+    WarningOne,
+    CriticalOne,
+    GetCritical,
+    GetWarning,
+    CallSumOne,
+    SmsSumOne,
+    ScreenBehaviour,
+    SumOne
   }
 }

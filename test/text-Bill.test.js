@@ -7,9 +7,9 @@ describe('The Text Bill function', function() {
     text.Maths('call');
     text.Maths('sms');
     text.Maths('sms');
-    assert.equal(text.sum(), 7.75); //true
-    assert.equal(text.call(), 5.50); //true
-    assert.equal(text.sms(), 2.25); //true
+    assert.equal(text.Sum(), 7.75); //true
+    assert.equal(text.Call(), 5.50); //true
+    assert.equal(text.Sms(), 2.25); //true
   });
   it('calculate a string from a given inpute', function() {
     var text = TextBill();
@@ -19,9 +19,9 @@ describe('The Text Bill function', function() {
     text.Maths('call');
     text.Maths('call');
     text.Maths('call');
-    assert.equal(text.sum(), 13.75);
-    assert.equal(text.call(), 13.75);
-    assert.equal(text.sms(), 0.00);
+    assert.equal(text.Sum(), 13.75);
+    assert.equal(text.Call(), 13.75);
+    assert.equal(text.Sms(), 0.00);
   });
   it('calculate a string with sms', function() {
     var text = TextBill();
@@ -30,17 +30,17 @@ describe('The Text Bill function', function() {
     text.Maths('sms');
     text.Maths('sms');
     text.Maths('sms');
-    assert.equal(text.sum(), 3.00);
-    assert.equal(text.sms(), 3.00);
-    assert.equal(text.call(), 0.00);
+    assert.equal(text.Sum(), 3.00);
+    assert.equal(text.Sms(), 3.00);
+    assert.equal(text.Call(), 0.00);
   });
   it('It should check if someone added nothing', function() {
     var text = TextBill();
 
     text.Maths('');
 
-    assert.equal(text.sum(), 0.00);
-    assert.equal(text.sms(), 0.00);
-    assert.equal(text.call(), 0.00);
+    assert.equal(text.Sum(), 0.00);
+    assert.equal(text.Sms(), 0.00);
+    assert.equal(text.Call(), 0.00);
   });
 });

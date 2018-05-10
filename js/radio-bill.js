@@ -11,13 +11,13 @@ function radioBill() {
     var billItemType = checkedRadioBtn.value;
   }
   first.Maths(billItemType); // update calls and sms
-  totalCallTwo.innerHTML = first.call().toFixed(2);
-  totalSmsTwo.innerHTML = first.sms().toFixed(2);
-  sumTwo.innerHTML = first.sum().toFixed(2);
+  totalCallTwo.innerHTML = first.Call().toFixed(2);
+  totalSmsTwo.innerHTML = first.Sms().toFixed(2);
+  sumTwo.innerHTML = first.Sum().toFixed(2);
 }
 
 function totalColor() {
-  var sumTotal = first.sum();
+  var sumTotal = first.Sum();
   if (sumTotal < 30) {
     sumTwo.classList.remove("danger");
     sumTwo.classList.remove("warning");

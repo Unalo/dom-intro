@@ -18,24 +18,24 @@ var settingsBillFunc = BillSettings();
 
 updateBtn.addEventListener('click', function() {
   var callText = callSetting.value;
-  settingsBillFunc.callOne(callText)
+  settingsBillFunc.CallOne(callText)
   var smsText = smsSetting.value;
-  settingsBillFunc.smsOne(smsText)
+  settingsBillFunc.SmsOne(smsText)
   var warningColor = warningSetting.value;
-  settingsBillFunc.warningOne(warningColor)
+  settingsBillFunc.WarningOne(warningColor)
   var criticalColor = criticalSetting.value;
-  settingsBillFunc.criticalOne(criticalColor)
+  settingsBillFunc.CriticalOne(criticalColor)
 });
 
 addBtn.addEventListener('click', function() {
   var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
   if (checkedBtn) {
     var billItemTypeWithSettings = checkedBtn.value;
-    settingsBillFunc.calc(billItemTypeWithSettings);
+    settingsBillFunc.Calc(billItemTypeWithSettings);
   }
-  callTotalSum.innerHTML = settingsBillFunc.callSumOne().toFixed(2);
-  smsTotalSum.innerHTML = settingsBillFunc.smsSumOne().toFixed(2);
-  totalSum.innerHTML = settingsBillFunc.sumOne().toFixed(2);
-  settingsBillFunc.screenBehaviour();
+  callTotalSum.innerHTML = settingsBillFunc.CallSumOne().toFixed(2);
+  smsTotalSum.innerHTML = settingsBillFunc.SmsSumOne().toFixed(2);
+  totalSum.innerHTML = settingsBillFunc.SumOne().toFixed(2);
+  settingsBillFunc.ScreenBehaviour();
   // var siya = settingsBillFunc.stop(
 });

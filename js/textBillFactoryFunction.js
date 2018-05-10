@@ -13,22 +13,22 @@ function TextBill() {
     }
   }
 
-  function call() {
+  function Call() {
     return callsTotal;
   }
 
-  function sms() {
+  function Sms() {
     return smsTotals;
   }
 
-  function sum() {
+  function Sum() {
     totalBill = callsTotal + smsTotals;
     return totalBill;
   }
   return {
     Maths,
-    call,
-    sms,
-    sum
+    Call,
+    Sms,
+    Sum
   }
 }

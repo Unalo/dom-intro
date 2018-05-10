@@ -11,13 +11,13 @@ function calculateText() {
   var textOne = billType.value.trim();
   main.Maths(textOne); // update calls and sms
   //add total for calls and sms
-  totalSms.innerHTML = main.sms().toFixed(2);
-  totalCall.innerHTML = main.call().toFixed(2);
-  sum1.innerHTML = main.sum().toFixed(2);
+  totalSms.innerHTML = main.Sms().toFixed(2);
+  totalCall.innerHTML = main.Call().toFixed(2);
+  sum1.innerHTML = main.Sum().toFixed(2);
 }
 
 function totalCostColor() {
-  var totalSum = main.sum();
+  var totalSum = main.Sum();
   //if less than 30 remove classList
   if (totalSum < 30) {
     sum1.classList.remove("warning");
