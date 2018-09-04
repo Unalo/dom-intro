@@ -25,10 +25,21 @@ function TextBill() {
     totalBill = callsTotal + smsTotals;
     return totalBill;
   }
+  function Screen () {
+    //if greater than 30 remove "danger" add "warning"
+    if (totalBill > 30 && 50 > totalBill) {
+      return "warning";
+    }
+    //if greater than 50 remove "warning" add "danger"
+    else if (totalBill > 50) {
+   return "danger";
+    }
+  }
   return {
     Maths,
     Call,
     Sms,
-    Sum
+    Sum,
+    Screen
   }
 }
